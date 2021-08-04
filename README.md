@@ -23,7 +23,7 @@ In this way, an individual cat is associated to the person that owns it. Any num
 
 Let's say we have the following owners:
 
-```
+```bash
 id               name      
 ---------------  ----------
 1                mugumogu  
@@ -33,7 +33,7 @@ id               name
 
 And the following cats:
 
-```
+```bash
 id               name        age         owner_id    breed        
 ---------------  ----------  ----------  ----------  -------------
 1                Maru        3           1           Scottish Fold
@@ -52,7 +52,7 @@ sqlite> SELECT * FROM cats WHERE owner_id = 1;
 
 returns: 
 
-```
+```bash
 id               name        age         owner_id    breed        
 ---------------  ----------  ----------  ----------  -------------
 1                Maru        3           1           Scottish Fold
@@ -162,6 +162,7 @@ owner_id INTEGER
 );
 
 ```
+
 Great! Now we're ready to start inserting some rows into our join table. 
 
 #### Inserting Data into the Join Table
@@ -182,7 +183,7 @@ SELECT * FROM cats_owners;
 
 This should return:
 
-```
+```bash
 cat_id           owner_id  
 ---------------  ----------
 3                2  
@@ -202,7 +203,7 @@ SELECT * FROM cats_owners;
 
 This should return:
 
-```
+```bash
 cat_id           owner_id  
 ---------------  ----------
 3                2         
@@ -227,7 +228,7 @@ SELECT * FROM cats_owners;
 
 This should return:
 
-```
+```bash
 cat_id           owner_id  
 ---------------  ----------
 3                2         
@@ -253,7 +254,7 @@ Let's SELECT from our join table all of the owners who are associated to cat num
 
 This should return:
 
-```
+```bash
 owner_id       
 ---------------
 2              
@@ -270,7 +271,7 @@ WHERE owner_id = 2;
 
 That should return:
 
-```
+```bash
 cat_id         
 ---------------
 3              
@@ -292,7 +293,7 @@ ON owners.id = cats_owners.owner_id WHERE cats_owners.cat_id = 3;
 
 This should return:
 
-```
+```bash
 name           
 ---------------
 Sophie         
@@ -328,13 +329,9 @@ WHERE cats_owners.owner_id = 2;
 
 This should return:
 
-```
+```bash
 name           
 ---------------
 Nona           
 Maru 
 ```
-
-
-
-
